@@ -1,7 +1,5 @@
 import SimpleLightbox from 'simplelightbox';
 import 'simplelightbox/dist/simple-lightbox.min.css';
-import iziToast from 'izitoast';
-import 'izitoast/dist/css/iziToast.min.css';
 import { fetchImages } from './js/pixabay-api';
 import {
   renderGallery,
@@ -45,7 +43,6 @@ const onSearchFormSubmit = event => {
       showErrorToast(
         'An error occurred while fetching the data. Please try again!'
       );
-      console.log(err);
     })
     .finally(() => {
       loader.classList.add('hidden');

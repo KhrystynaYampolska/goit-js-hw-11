@@ -1,5 +1,7 @@
 import SimpleLightbox from 'simplelightbox';
 import 'simplelightbox/dist/simple-lightbox.min.css';
+import iziToast from 'izitoast';
+import 'izitoast/dist/css/iziToast.min.css';
 
 const createGalleryCardTemplate = imgInfo => {
   return `<li class="gallery-card">
@@ -18,13 +20,6 @@ const createGalleryCardTemplate = imgInfo => {
 export const renderGallery = images => {
   const gallery = document.querySelector('.js-gallery');
   gallery.innerHTML = images.map(createGalleryCardTemplate).join('');
-
-  const lightbox = new SimpleLightbox('.gallery-card a', {
-    captions: true,
-    captionsData: 'alt',
-    captionPosition: 'bottom',
-    captionDelay: 250,
-  });
 
   lightbox.refresh();
 };
@@ -46,3 +41,10 @@ export const showErrorToast = message => {
     position: 'topRight',
   });
 };
+
+const lightbox = new SimpleLightbox('.gallery-card a', {
+  captions: true,
+  captionsData: 'alt',
+  captionPosition: 'bottom',
+  captionDelay: 250,
+});

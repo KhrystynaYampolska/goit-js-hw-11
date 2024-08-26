@@ -39,12 +39,13 @@ img {
 }
 
 .search-text:hover,
-.search-text:focus {
+.search-text:active {
   border: 1px solid #000000;
 }
 
-.search-text:active {
+.search-text:focus {
   border: 1px solid #4e75ff;
+  outline: none;
 }
 
 input::placeholder {
